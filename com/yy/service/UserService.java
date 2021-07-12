@@ -90,8 +90,9 @@ public class UserService {
     private static void cunqian(int c, List<User> users, Scanner sc) {
         System.out.println("存钱");
         System.out.println(" 存多少钱？ (存入最小金额100元存款金额应为100的倍数小额面值将会被当做假币吞入)");
-        int qadd=sc.nextInt()%100;
-        users.get(c).setQian(users.get(c).getQian()+qadd);
+        int qadd=sc.nextInt();
+        int ccs=qadd-qadd%100;
+        users.get(c).setQian(users.get(c).getQian()+ccs);
     }
 
     private static void zhuanzhang(int c, List<User> users, Scanner sc) {
