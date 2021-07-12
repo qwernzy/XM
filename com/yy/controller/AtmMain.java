@@ -34,6 +34,7 @@ public class AtmMain {
                System.out.println("user = " + user);
            }
 
+
            for (int c=0;c<users.size();c++) {
 
                if (users.get(c).getId().equals(ut.getId()) && users.get(c).getPwd().equals(ut.getPwd())) {

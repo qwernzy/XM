@@ -18,7 +18,8 @@ public class TextUtil {
             System.out.println("user = " + user);
         }
     }
-    public static void yhjm() {
+    public static void
+    yhjm() {
 
         System.out.println("用户界面");
         System.out.println("余额：");
