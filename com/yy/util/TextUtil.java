@@ -9,9 +9,9 @@ import java.util.Scanner;
 
 public class TextUtil {
     public static void huanying(){
-        System.out.println("**********");
-        System.out.println("欢迎使用ATM");
-        System.out.println("**********");
+        System.out.println("******************************");
+        System.out.println("**********欢迎使用ATM*********");
+        System.out.println("******************************");
     }
 
     public static void selectall(UserDate users) {

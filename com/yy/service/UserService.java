@@ -14,12 +14,12 @@ public class UserService {
 
         Scanner sc = new Scanner(System.in);
         System.out.println("请输入卡号");
-        String id=sc.nextLine();
+        String id = sc.nextLine();
         System.out.println("请输入密码");
-        String pwd=sc.nextLine();
-       User ut=new User();
-       ut.setId(id);
-       ut.setPwd(pwd);
+        String pwd = sc.nextLine();
+        User ut = new User();
+        ut.setId(id);
+        ut.setPwd(pwd);
         return ut;
     }
 
@@ -45,7 +45,7 @@ public class UserService {
     public static boolean gn(int c) {
 
         UserDate userd = UserDate.getInstance();
-         List<User> users = userd.getUsers();
+        List<User> users = userd.getUsers();
 
         Scanner sc = new Scanner(System.in);
         String s = sc.nextLine();
@@ -90,34 +90,30 @@ public class UserService {
     private static void cunqian(int c, List<User> users, Scanner sc) {
         System.out.println("存钱");
         System.out.println(" 存多少钱？ (存入最小金额100元存款金额应为100的倍数小额面值将会被当做假币吞入)");
-        int qadd=sc.nextInt();
-        int ccs=qadd-qadd%100;
-        users.get(c).setQian(users.get(c).getQian()+ccs);
+        int qadd = sc.nextInt();
+        int ccs = qadd - qadd % 100;
+        users.get(c).setQian(users.get(c).getQian() + ccs);
     }
 
     private static void zhuanzhang(int c, List<User> users, Scanner sc) {
         System.out.println(" 你想给谁转账？");
         String card = sc.nextLine();
         System.out.println(" 转多少钱？ ");
-        double q=sc.nextDouble();
+        double q = sc.nextDouble();
         if (q > users.get(c).getQian()) {
-            for (int caid = 0; caid < users.size() ; caid++) {
+            for (int caid = 0; caid < users.size(); caid++) {
                 if (card.equals(users.get(caid).getId())) {
-                    users.get(c).setQian(users.get(c).getQian()-q);
-                    users.get(caid).setQian(users.get(caid).getQian()+q);
+                    users.get(c).setQian(users.get(c).getQian() - q);
+                    users.get(caid).setQian(users.get(caid).getQian() + q);
                     System.out.println("转账成功");
-
 
 
                 }
             }
-        }else {
-            System.out.println("您的账户余额不足，您的账户余额为："+users.get(c).getQian());
+        } else {
+            System.out.println("您的账户余额不足，您的账户余额为：" + users.get(c).getQian());
 
         }
-
-
-
 
 
     }
@@ -125,11 +121,11 @@ public class UserService {
     private static void quqian(int c, List<User> users, Scanner sc) {
         System.out.println("你想取多少钱？\n请输入数额（输入整数，我吐不出硬币）");
         int ss = sc.nextInt();
-        if (ss  > users.get(c).getQian()) {
-            users.get(c).setQian(users.get(c).getQian()-ss);
+        if (ss > users.get(c).getQian()) {
+            users.get(c).setQian(users.get(c).getQian() - ss);
             System.out.println(users.get(c).getQian());
-        }else {
-            System.out.println("您的账户余额不足，您的账户余额为："+users.get(c).getQian());
+        } else {
+            System.out.println("您的账户余额不足，您的账户余额为：" + users.get(c).getQian());
         }
 
 //        if (ss  > users.get(c).getQian()) {
