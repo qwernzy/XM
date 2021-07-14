@@ -32,6 +32,7 @@ public class Test06 {
 			ss=str.split("\\+");
 			System.out.println(ss[0]+"*"+ss[1]+"=");
 			int a=Integer.valueOf(ss[0])+Integer.valueOf(ss[1]);
+
 			System.out.println(ss[0]+"+"+ss[1]+"="+a);
 			return a;
 		}else if(str.split("-").length>1){

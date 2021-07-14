@@ -1,4 +1,7 @@
 package com.yy.bean;
+
+
+
 /**
  * 检查一个字符串是否为回文
  * 回文:正着念与反着念一样，例如:上海自来水来自海上
@@ -23,14 +26,14 @@ public class Test03 {
 	 * @return true表示是回文，false表示不是回文
 	 */
 	public static boolean check(String str){
-		StringBuilder ss=new StringBuilder(str);
-		StringBuilder reverse = ss.reverse();
-		String re=reverse.toString();
-		if (reverse.equals(ss)) {
-			System.out.println("是回文");
+		StringBuilder sb=new StringBuilder(str);
+		sb.reverse();//将str倒置的方法
+		String newStr=new String(sb);
+		if(str.equals(newStr)){
+			System.out.println(str+"是回文字符串");
 			return true;
-		}else {
-			System.out.println("不是回文");
+		}else{
+			System.out.println(str+"不是回文字符串");
 			return false;
 		}
 

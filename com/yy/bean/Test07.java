@@ -1,6 +1,6 @@
 package com.yy.bean;
 
-public class StirngDemo03 {
+public class Test07 {
     public static void main(String[] args) {
         //          0123456789012345
         String str="thinking in java";
@@ -27,6 +27,7 @@ public class StirngDemo03 {
     private static void cn(String st) {
         String s=st.replace("www.","");
         String ss=s.replace(".com.cn","");
+
         System.out.println(ss);
     }
 }
