@@ -1,6 +1,8 @@
 package com.yy.bean.collectiondemo;
 
-public class person {
+import org.jetbrains.annotations.NotNull;
+
+public class person implements Comparable<person>{
     private String name;
     private  int sg;
     private int age;
@@ -36,5 +38,13 @@ public class person {
 
     public void setAge(int age) {
         this.age = age;
+    }
+
+    @Override
+    public int compareTo(@NotNull person o) {
+        int x=this.name.length()-o.getName().length();
+
+            return x;
+
     }
 }
