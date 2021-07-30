@@ -16,6 +16,7 @@ public class person implements Comparable<person>{
                 '}';
     }
 
+
     public String getName() {
         return name;
     }

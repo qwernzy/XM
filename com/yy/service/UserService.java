@@ -1,8 +1,7 @@
 package com.yy.service;
 
-import com.yy.util.TextUtil;
-import com.yy.util.UserDate;
 import com.yy.entity.User;
+import com.yy.util.UserDate;
 
 import java.util.List;
 import java.util.Scanner;
@@ -100,7 +99,7 @@ public class UserService {
         String card = sc.nextLine();
         System.out.println(" 转多少钱？ ");
         double q = sc.nextDouble();
-        if (q > users.get(c).getQian()) {
+        if (q < users.get(c).getQian()) {
             for (int caid = 0; caid < users.size(); caid++) {
                 if (card.equals(users.get(caid).getId())) {
                     users.get(c).setQian(users.get(c).getQian() - q);
@@ -121,7 +120,7 @@ public class UserService {
     private static void quqian(int c, List<User> users, Scanner sc) {
         System.out.println("你想取多少钱？\n请输入数额（输入整数，我吐不出硬币）");
         int ss = sc.nextInt();
-        if (ss > users.get(c).getQian()) {
+        if (ss < users.get(c).getQian()) {
             users.get(c).setQian(users.get(c).getQian() - ss);
             System.out.println(users.get(c).getQian());
         } else {
